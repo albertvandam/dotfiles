@@ -1,0 +1,16 @@
+<application>
+  <component name="IgnoredPluginSuggestions">
+    <option name="pluginIds">
+      <list>
+        <option value="com.haulmont.jpab" />
+        <option value="com.intellij.guice" />
+        <option value="com.intellij.bigdatatools" />
+        <option value="com.jetbrains.jax.ws" />
+        <option value="org.intellij.plugins.postcss" />
+        <option value="com.intellij.javaee.ejb" />
+        <option value="com.intellij.kubernetes"/>
+        <option value="com.jetbrains.lang.ejs"/>
+      </list>
+    </option>
+  </component>
+</application>

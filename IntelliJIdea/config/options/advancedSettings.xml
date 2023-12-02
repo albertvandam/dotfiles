@@ -1,0 +1,13 @@
+<application>
+  <component name="AdvancedSettings">
+    <option name="settings">
+      <map>
+<entry key="editor.skip.copy.and.cut.for.empty.selection" value="true" />
+        <entry key="editor.skip.selecting.line.after.copy.empty.selection" value="true" />
+        <entry key="show.diff.as.editor.tab" value="false" />
+<entry key="terminal.buffer.max.lines.count" value="10000" />
+        <entry key="vcs.commit.tool.window" value="false" />
+      </map>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,70 @@
+<application>
+  <component name="LineMarkerSettings">
+    <option name="providers">
+      <map>
+        <entry key="CdiDisposerMethodsClassAnnotator" value="true" />
+        <entry key="CdiInjectionsClassAnnotator" value="true" />
+        <entry key="GrpcRunRequestGutterProvider" value="true" />
+        <entry key="PbCodeImplementationLineMarkerProvider" value="true" />
+        <entry key="QsCacheLineMarker" value="true" />
+        <entry key="QsScheduledTasksLineMarker" value="true" />
+        <entry key="RSOpenInHttpClientLineMarkerProvider" value="true" />
+        <entry key="RenderedDoc" value="true" />
+        <entry key="RetrofitOpenInHttpClientLineMarkerProvider" value="true" />
+        <entry key="SwOpenInHttpClientLineMarkerProvider" value="true" />
+        <entry key="com.intellij.aop.jam.AopUastAnnotator" value="true" />
+        <entry key="com.intellij.beanValidation.providers.BvConfigLineMarkerProvider" value="true" />
+        <entry key="com.intellij.beanValidation.providers.BvConstraintLineMarkerProvider" value="true" />
+        <entry key="com.intellij.cdi.gutter.CdiAnnotationsLineMarkerProvider" value="true" />
+        <entry key="com.intellij.cdi.gutter.CdiConfigLineMarkerProvider" value="true" />
+        <entry key="com.intellij.codeInsight.ExternalAnnotationLineMarkerProvider" value="true" />
+        <entry key="com.intellij.codeInsight.InferredContractAnnotationsLineMarkerProvider" value="true" />
+        <entry key="com.intellij.codeInsight.InferredNullabilityAnnotationsLineMarkerProvider" value="true" />
+        <entry key="com.intellij.codeInsight.daemon.impl.IconLineMarkerProvider" value="true" />
+        <entry key="com.intellij.codeInsight.daemon.impl.RecursiveCallLineMarkerProvider" value="true" />
+        <entry key="com.intellij.execution.lineMarker.RunLineMarkerProvider" value="true" />
+        <entry key="com.intellij.httpClient.http.request.codeInsight.HttpClientOverrideLineMarkerProvider" value="true" />
+        <entry key="com.intellij.httpClient.http.request.codeInsight.HttpRequestDiffLineMarkerProvider" value="true" />
+        <entry key="com.intellij.javaee.application.JavaeeAppConfigLineMarkerProvider" value="true" />
+        <entry key="com.intellij.javaee.web.module.view.web.WebClassesLineMarkerProvider" value="true" />
+        <entry key="com.intellij.javaee.web.module.view.web.WebXmlLineMarkerProvider" value="true" />
+        <entry key="com.intellij.jpa.highlighting.JpaClassLineMarkerProvider" value="true" />
+        <entry key="com.intellij.jpa.highlighting.JpaConfigLineMarkerProvider" value="true" />
+        <entry key="com.intellij.lang.javascript.highlighting.JSRecursiveCallLineMarkerProvider" value="true" />
+        <entry key="com.intellij.lang.javascript.highlighting.TypeScriptSourceMappingLineMarkerProvider" value="true" />
+        <entry key="com.intellij.protobuf.jvm.gutter.PbJavaLineMarkerProvider" value="true" />
+        <entry key="com.intellij.sql.editor.SqlRecursiveCallLineMakerProvider" value="true" />
+        <entry key="com.intellij.ui.ColorLineMarkerProvider" value="true" />
+        <entry key="devkit.beforeAfter" value="true" />
+        <entry key="devkit.description" value="true" />
+        <entry key="java.implemented" value="true" />
+        <entry key="java.implementing" value="true" />
+        <entry key="java.lambda" value="true" />
+        <entry key="java.overridden" value="true" />
+        <entry key="java.overriding" value="true" />
+        <entry key="java.service" value="true" />
+        <entry key="java.sibling.inherited" value="true" />
+        <entry key="js.implemented" value="true" />
+        <entry key="js.implementing" value="true" />
+        <entry key="js.overridden" value="true" />
+        <entry key="js.overriding" value="true" />
+        <entry key="kotlin.actual" value="true" />
+        <entry key="kotlin.dsl" value="true" />
+        <entry key="kotlin.expect" value="true" />
+        <entry key="kotlin.implemented" value="true" />
+        <entry key="kotlin.implementing" value="true" />
+        <entry key="kotlin.overridden" value="true" />
+        <entry key="kotlin.overriding" value="true" />
+        <entry key="kotlin.recursive" value="true" />
+        <entry key="org.editorconfig.configmanagement.editor.EditorConfigPreviewMarkerProvider" value="true" />
+        <entry key="org.intellij.plugins.markdown.editor.images.ConfigureHtmlImageLineMarkerProvider" value="true" />
+        <entry key="org.intellij.plugins.markdown.editor.images.ConfigureMarkdownImageLineMarkerProvider" value="true" />
+        <entry key="org.intellij.plugins.markdown.editor.images.ConfigureTextHtmlImageLineMarkerProvider" value="true" />
+        <entry key="org.intellij.plugins.markdown.extensions.common.plantuml.PlantUMLCodeFenceDownloadLineMarkerProvider" value="true" />
+        <entry key="org.jetbrains.idea.devkit.navigation.PluginDescriptorDeclarationRelatedItemLineMarkerProvider" value="true" />
+        <entry key="org.jetbrains.idea.devkit.references.DevKitRelatedPropertiesProvider" value="true" />
+        <entry key="org.jetbrains.idea.devkit.testAssistant.TestDataLineMarkerProvider" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

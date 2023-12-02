@@ -1,0 +1,91 @@
+{
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "firstWindowPreference": "persistedWindowLayout",
+    "profiles": {
+        "defaults": {
+            "bellStyle": ["window", "taskbar"],
+            "colorScheme": "Dracula",
+            "font": {
+                "face": "FiraCode Nerd Font",
+                "size": 14
+            },
+            "intenseTextStyle": "all",
+            "useAcrylic": true,
+            "useAtlasEngine": true
+        },
+        "list": [
+            {
+                "backgroundImage": "%HOME%\\.config\\Install\\Windows\\WindowsTerminal\\WindowsLogo.png",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.6,
+                "backgroundImageStretchMode": "none",
+                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\" -nologo",
+                "default": true,
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "backgroundImage": "%HOME%\\.config\\Install\\Windows\\WindowsTerminal\\UbuntuLogo.png",
+                "backgroundImageAlignment": "bottomRight",
+                "backgroundImageOpacity": 0.6,
+                "backgroundImageStretchMode": "none",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            }
+        ]
+    },
+    "schemes": [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#E97801",
+            "brightBlack": "#E97801",
+            "brightBlue": "#E97801",
+            "brightCyan": "#E97801",
+            "brightGreen": "#E97801",
+            "brightPurple": "#E97801",
+            "brightRed": "#E97801",
+            "brightWhite": "#E97801",
+            "brightYellow": "#E97801",
+            "cursorColor": "#E97801",
+            "cyan": "#E97801",
+            "foreground": "#E97801",
+            "green": "#E97801",
+            "name": "Amber-theme",
+            "purple": "#E97801",
+            "red": "#E97801",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E97801",
+            "yellow": "#E97801"
+        },
+        {
+            "background": "#282A36",
+            "black": "#21222C",
+            "blue": "#BD93F9",
+            "brightBlack": "#6272A4",
+            "brightBlue": "#D6ACFF",
+            "brightCyan": "#A4FFFF",
+            "brightGreen": "#69FF94",
+            "brightPurple": "#FF92DF",
+            "brightRed": "#FF6E6E",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFFA5",
+            "cursorColor": "#F8F8F2",
+            "cyan": "#8BE9FD",
+            "foreground": "#F8F8F2",
+            "green": "#50FA7B",
+            "name": "Dracula",
+            "purple": "#FF79C6",
+            "red": "#FF5555",
+            "selectionBackground": "#44475A",
+            "white": "#F8F8F2",
+            "yellow": "#F1FA8C"
+        }
+    ],
+    "useAcrylicInTabRow": true,
+    "windowingBehavior": "useExisting"
+}

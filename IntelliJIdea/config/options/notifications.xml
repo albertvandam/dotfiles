@@ -1,0 +1,5 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="SonarLint: Taint vulnerabilities" displayType="NONE" shouldLog="false" />
+  </component>
+</application>

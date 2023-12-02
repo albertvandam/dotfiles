@@ -1,0 +1,107 @@
+{
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.quickSuggestions": {
+            "comments": true,
+            "other": true,
+            "strings": true
+        },
+        "editor.renderWhitespace": "all"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "angular.forceStrictTemplates": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.accessibilitySupport": "off",
+    "editor.autoIndent": "full",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always"
+    },
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "line",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.fontFamily": "'FiraCode Nerd Font', 'Cascadia Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.guides.bracketPairs": "active",
+    "editor.minimap.autohide": true,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "off",
+    "files.autoSave": "onWindowChange",
+    "files.eol": "\n",
+    "git.autofetch": true,
+    "java.autobuild.enabled": false,
+    "java.cleanup.actionsOnSave": ["qualifyStaticMembers", "addOverride", "addDeprecated", "addFinalModifier"],
+    "powershell.powerShellAdditionalExePaths": {
+        "PowerShell": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+    },
+    "powershell.powerShellDefaultVersion": "PowerShell",
+    "prettier.arrowParens": "always",
+    "prettier.bracketSameLine": true,
+    "prettier.bracketSpacing": true,
+    "prettier.embeddedLanguageFormatting": "auto",
+    "prettier.htmlWhitespaceSensitivity": "css",
+    "prettier.insertPragma": false,
+    "prettier.jsxSingleQuote": false,
+    "prettier.printWidth": 120,
+    "prettier.proseWrap": "preserve",
+    "prettier.quoteProps": "as-needed",
+    "prettier.requirePragma": false,
+    "prettier.semi": true,
+    "prettier.singleQuote": false,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "all",
+    "prettier.useTabs": false,
+    "prettier.vueIndentScriptAndStyle": false,
+    "redhat.telemetry.enabled": false,
+    "scm.defaultViewMode": "tree",
+    "search.showLineNumbers": true,
+    "security.allowedUNCHosts": ["wsl.localhost"],
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "icon": "terminal-powershell",
+            "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+        }
+    },
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    "zenMode.centerLayout": false,
+    "quarkus.tools.alwaysShowWelcomePage": false,
+    "cSpell.userWords": ["DVSS", "WEBCOM"]
+}

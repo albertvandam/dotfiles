@@ -1,0 +1,52 @@
+$apps = @(
+    @{name = "Clipchamp.Clipchamp_yxz26nhyzhsrt" },
+    @{name = "Microsoft.549981C3F5F10_8wekyb3d8bbwe" },
+    @{name = "Microsoft.BingNews_8wekyb3d8bbwe" },
+    @{name = "Microsoft.BingWeather_8wekyb3d8bbwe" },
+    @{name = "Microsoft.DevHome" },
+    @{name = "Microsoft.GamingApp_8wekyb3d8bbwe" },
+    @{name = "Microsoft.GetHelp_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Getstarted_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Microsoft3DViewer_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MixedReality.Portal_8wekyb3d8bbwe" },
+    @{name = "Microsoft.MSPaint_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Office.OneNote_8wekyb3d8bbwe" },
+    @{name = "Microsoft.OneDrive" },
+    @{name = "Microsoft.OneDriveSync_8wekyb3d8bbwe" },
+    @{name = "Microsoft.OutlookForWindows_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Paint_8wekyb3d8bbwe" },
+    @{name = "Microsoft.People_8wekyb3d8bbwe" },
+    @{name = "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe" },
+    @{name = "Microsoft.SkypeApp_kzf8qxf38zg5c" },
+    @{name = "Microsoft.Todos_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Wallet_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Windows.Photos_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsAlarms_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsCamera_8wekyb3d8bbwe" },
+    @{name = "microsoft.windowscommunicationsapps_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsMaps_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsNotepad_8wekyb3d8bbwe" },
+    @{name = "Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe" },
+    @{name = "Microsoft.Xbox.TCUI_8wekyb3d8bbwe" },
+    @{name = "Microsoft.XboxApp_8wekyb3d8bbwe" },
+    @{name = "Microsoft.XboxGameOverlay_8wekyb3d8bbwe" },
+    @{name = "Microsoft.XboxGamingOverlay_8wekyb3d8bbwe" },
+    @{name = "Microsoft.XboxIdentityProvider_8wekyb3d8bbwe" },
+    @{name = "Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe" },
+    @{name = "Microsoft.YourPhone_8wekyb3d8bbwe" },
+    @{name = "Microsoft.ZuneMusic_8wekyb3d8bbwe" },
+    @{name = "Microsoft.ZuneVideo_8wekyb3d8bbwe" },
+    @{name = "MicrosoftCorporationII.QuickAssist_8wekyb3d8bbwe" },
+    @{name = "SpotifyAB.SpotifyMusic_zpdnekdrzrea0" }
+);
+Foreach ($app in $apps) {
+    $listApp = winget list --exact -q $app.name --accept-source-agreements 
+    if ([String]::Join("", $listApp).Contains($app.name)) {
+        winget uninstall --exact --silent $app.name
+    }
+}

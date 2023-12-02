@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Environment Configuration</title>
+        <style>
+            .key {
+                width: 100%;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Environment Configuration</h1>
+        <p>The setup completed with the below configuration.</p>
+
+        <h2>SSH Public Key</h2>
+        <label for="skey">Your SSH Public key for use with Github is:</label>
+        <textarea class="key" readonly id="skey">{PUBKEY}</textarea>
+
+        <h2>Applications</h2>
+        <h3>Development Tools</h3>
+        <ul>
+            <li>Azul Zulu OpenJDK 17</li>
+            <li>NodeJS LTS</li>
+            <li>JetBrains IntelliJ IDEA</li>
+            <li>Visual Studio Code</li>
+            <li>Insomnia</li>
+            <li>Git</li>
+        </ul>
+        <h3>Virtualisation</h3>
+        <ul>
+            <li>Windows Subsystem for Linux</li>
+            <li>Ubuntu Jammy 22.04</li>
+            <li>Docker</li>
+        </ul>
+        <h3>Browsers</h3>
+        <ul>
+            <li>Mozilla Firefox</li>
+            <li>Google Chrome</li>
+            <li>Microsoft Edge</li>
+        </ul>
+        <h3>Utilities</h3>
+        <ul>
+            <li>KeePassXC</li>
+        </ul>
+        <h3>Terminal</h3>
+        <ul>
+            <li>Windows Terminal</li>
+            <li>Microsoft PowerShell</li>
+        </ul>
+
+        <h2>Terminal</h2>
+        <h3>Aliases</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Alias</th>
+                    <th>Description</th>
+                    <th>Windows</th>
+                    <th>Ubuntu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>l</td>
+                    <td>Grid directory listing</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>ll</td>
+                    <td>Long directory listing excluding hidden files</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>la</td>
+                    <td>Long directory listing including hidden files</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>lt</td>
+                    <td>Directory tree</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>tree</td>
+                    <td>Directory tree</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>p</td>
+                    <td>Current working directory</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>cpwd</td>
+                    <td>Copy current working directory path to clipboard</td>
+                    <td>X</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td>Clear terminal</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>cls</td>
+                    <td>
+                        Clear terminal and provide a long directory listing of
+                        current working directory
+                    </td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>which {command}</td>
+                    <td>Full path to command</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>e [file]</td>
+                    <td>Open VSCode, optionally opens file</td>
+                    <td>X</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>df</td>
+                    <td>Disk utilisation</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>top</td>
+                    <td>Process monitor</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>gs</td>
+                    <td>Git status</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>gl</td>
+                    <td>Git log</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>nn</td>
+                    <td>
+                        Nuke NPM install (delete node_modules, package-lock.json
+                        and recreate it)
+                    </td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>ni</td>
+                    <td>NPM install</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>cat {file}</td>
+                    <td>Show contents of file</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>o {file}</td>
+                    <td>Open file using default action</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>explore</td>
+                    <td>Open Explorer in current working directory</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>vi {file}</td>
+                    <td>Open file in Vim</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>Show list of recent directories</td>
+                    <td>-</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>..</td>
+                    <td>Up one directory (i.e. cd ..)</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>Up two directories (i.e. cd ../..)</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>....</td>
+                    <td>Up three directories (i.e. cd ../../..)</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>docker {commands}</td>
+                    <td>Run docker commands (as root) on Ubuntu</td>
+                    <td>X</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>upd</td>
+                    <td>Update configuration and installed applications</td>
+                    <td>X</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Utilities</h3>
+        <ul>
+            <li>bat</li>
+            <li>btop</li>
+        </ul>
+    </body>
+</html>

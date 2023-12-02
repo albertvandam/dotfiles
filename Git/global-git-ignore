@@ -1,0 +1,50 @@
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# MacOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# SASS
+.sass-cache
+
+# VSCode
+.vscode/
+
+# Windows
+Thumbs.db 
+Desktop.ini
+$RECYCLE.BIN/
+
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+
+# NodeJS
+lib-cov
+*.out
+npm-debug.log
+node_modules/
+dist/
+.angular/
+
+# OTHER
+_test/
+.envrc
+.env
+

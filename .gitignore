@@ -1,0 +1,11 @@
+fish/
+configstore/
+iterm2/AppSupport
+neofetch/
+Vim/.vim/.netrwhist
+*.zwc
+htop/
+Brewfile.lock.json
+*.log
+*.crt
+*.key

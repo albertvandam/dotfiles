@@ -1,0 +1,62 @@
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = vi
+	pager = delta
+    excludesFile = ~/.config/Git/global-git-ignore
+	ignorecase = false
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    autocrlf = input
+    attributesfile = ~/.config/Git/global-git-attributes
+
+[push]
+	autoSetupRemote = true
+    default = upstream
+
+[gui]
+	encoding = utf-8
+
+[pull]
+	rebase = false
+
+[submodule]
+    recurse = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = line-numbers decorations
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    side-by-side = true
+    line-numbers = true
+    
+[delta "decorations"]
+	minus-style = red bold normal
+	plus-style = green bold normal
+	minus-emph-style = white bold red
+	minus-non-emph-style = red bold normal
+	plus-emph-style = white bold green
+	plus-non-emph-style = green bold normal
+	file-style = yellow bold none
+	file-decoration-style = yellow box
+	hunk-header-style = magenta bold
+	hunk-header-decoration-style = magenta box
+	minus-empty-line-marker-style = normal normal
+	plus-empty-line-marker-style = normal normal
+	line-numbers-right-format = "{np:^4}│ "
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[include]
+    path = ~/.config/Git/aliases
+    path = ~/.config/Git/theme
+
+

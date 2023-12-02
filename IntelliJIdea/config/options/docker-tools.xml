@@ -1,0 +1,6 @@
+<application>
+  <component name="DockerSettings">
+    <option name="dockerComposePath" value="C:\Program Files\Rancher Desktop\resources\resources\win32\bin\docker.exe" />
+    <option name="dockerPath" value="C:\Program Files\Rancher Desktop\resources\resources\win32\bin\docker.exe" />
+  </component>
+</application>

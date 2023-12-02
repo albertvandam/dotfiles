@@ -1,0 +1,21 @@
+*.ttf           binary
+*.eot           binary
+*.woff          binary
+*.woff2         binary
+*.pdf           binary
+*.png           binary
+*.webp          binary
+*.gif           binary
+*.ico           binary
+*.exe           binary
+*.zip           binary
+*.ts            text eol=lf
+*.js            text eol=lf
+*.less          text eol=lf
+*.css           text eol=lf
+*.md            text eol=lf
+*.svg           text eol=lf
+*.html          text eol=lf
+*.json          text eol=lf
+*.sh            text eol=lf
+*.java          text eol=lf
