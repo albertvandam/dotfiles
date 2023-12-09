@@ -2,6 +2,7 @@ idea.key
 plugin_PCWMP.license
 updatedBrokenPlugins.db
 tasks/
+plugins/
 .lock
 c.kdbx
 c.pwd
@@ -28,3 +29,4 @@ overrideFileTypes.xml
 updates.xml
 web-types-npm-loader.xml
 disabled_update.txt
+spellchecker-dictionary.xml

@@ -8,3 +8,4 @@ idea installPlugins "Key Promoter X"
 idea installPlugins MavenRunHelper
 idea installPlugins software.xdev.saveactions
 idea installPlugins com.intellij.bigdatatools.kafka
+idea installPlugins com.github.lppedd.idea-conventional-commit-commitlint
