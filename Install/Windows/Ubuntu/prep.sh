@@ -60,4 +60,8 @@ if [ -f /etc/wsl.conf ]; then
     /bin/cp /etc/wsl.conf /etc/wsl.conf.bak
 fi
 echo "[boot]" >/etc/wsl.conf
-echo "systemd=true" >>/etc/wsl.conf
+echo "systemd = true" >>/etc/wsl.conf
+echo "" >>/etc/wsl.conf
+echo "[automount]" >>/etc/wsl.conf
+echo "options = "metadata"" >>/etc/wsl.conf
+echo "" >>/etc/wsl.conf

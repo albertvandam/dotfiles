@@ -70,6 +70,13 @@ autoload -U add-zsh-hook
 add-zsh-hook precmd precmd_title
 add-zsh-hook preexec preexec_title
 
+# WSL specific settings.
+if grep -q "Microsoft" /proc/version > /dev/null 2>&1; then
+    if [ "$(umask)" = "0000" ]; then
+        umask 0022
+    fi
+fi
+
 for file in $(find ~/.local/zsh_config -type f -name "*.env" ); 
 do
     source $file

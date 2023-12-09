@@ -18,8 +18,8 @@ fi
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Updating Homebrew"
-brew update
-brew upgrade
+brew update --force
+brew upgrade --greedy
 brew unlink node@20 && brew link --force node@20
 
 if [ -d ~/.local/update_extra ]; then
