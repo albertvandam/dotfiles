@@ -48,8 +48,6 @@ if (($null -eq $a) -or ($a.Trim().Length -eq 0)) {
     wsl.exe --set-default Ubuntu
 }
 
-node.exe "$env:HOMEDRIVE$env:HOMEPATH\.config\Install\Windows\WindowsTerminal\patch.js"
-
 $d = $env:HOMEDRIVE.Replace(":", "").ToLower()
 $p = $env:HOMEPATH.Replace("\", "/")
 $h = "/mnt/$d$p"
@@ -63,6 +61,8 @@ wsl.exe --user root chsh $linuxUser --shell /usr/bin/zsh
 $desktopFolder = [Environment]::GetFolderPath("Desktop")
 $PUBKEY = Get-Content $HOME\.ssh\id_rsa.pub
 (Get-Content $HOME\.config\Install\Windows\info_template.html).replace("{PUBKEY}", $PUBKEY) | Set-Content $desktopFolder\Environment_Info.html
+
+node.exe "$env:HOMEDRIVE$env:HOMEPATH\.config\Install\Windows\WindowsTerminal\patch.js"
 
 Clear-Host
 Write-Output "All done"

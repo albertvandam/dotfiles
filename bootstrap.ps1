@@ -1,13 +1,6 @@
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 
 $isWin11 = (Get-WmiObject Win32_OperatingSystem).Caption -Match "Windows 11"
-if (!$isWin11) {
-    [console]::beep(500, 300)
-    Write-Output "`a"
-
-    Write-Host "This script requires Windows 11" -ForegroundColor Red
-    exit
-}
 
 $restartNeeded = $false
 
@@ -130,25 +123,30 @@ $settingsJson =
 "@;
 $settingsJson | Out-File $settingsPath -Encoding utf8
 
-Write-Output "Updating Windows Terminal"
+if ($isWin11) {
+    Write-Output "Updating Windows Terminal"
 
-# uninstall Windows Terminal if it is already installed
-# possibly outdated, and broken after winget install
-$terminalName = "Microsoft.WindowsTerminal"
-$listApp = winget list --exact -q $terminalName --accept-source-agreements 
-if ([String]::Join("", $listApp).Contains($terminalName)) {
-    winget uninstall $terminalName
+    # uninstall Windows Terminal if it is already installed
+    # possibly outdated, and broken after winget install
+    $terminalName = "Microsoft.WindowsTerminal"
+    $listApp = winget list --exact -q $terminalName --accept-source-agreements 
+    if ([String]::Join("", $listApp).Contains($terminalName)) {
+        winget uninstall $terminalName
+    }
+
+    Write-Output "Download latest release of Windows Terminal"
+    $releases_url = 'https://api.github.com/repos/microsoft/terminal/releases/latest'
+
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $releases = Invoke-RestMethod -uri $releases_url
+    $latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith('msixbundle') } | Select-Object -First 1
+
+    Write-Output "Install Windows Terminal"
+    Add-AppxPackage -Path $latestRelease.browser_download_url -ForceApplicationShutdown
+} else {
+    Write-host "Installing: Microsoft.WindowsTerminal"
+    winget install --exact --silent Microsoft.WindowsTerminal --accept-package-agreements --disable-interactivity
 }
-
-Write-Output "Download latest release of Windows Terminal"
-$releases_url = 'https://api.github.com/repos/microsoft/terminal/releases/latest'
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = Invoke-RestMethod -uri $releases_url
-$latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith('msixbundle') } | Select-Object -First 1
-
-Write-Output "Install Windows Terminal"
-Add-AppxPackage -Path $latestRelease.browser_download_url -ForceApplicationShutdown
 
 # start and stop WT to make sure config files exists
 Start-Process -WindowStyle Minimized $env:HOMEDRIVE$env:HOMEPATH\AppData\Local\Microsoft\WindowsApps\wt.exe 
