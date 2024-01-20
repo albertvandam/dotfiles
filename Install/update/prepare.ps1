@@ -1,14 +1,5 @@
 $PSDefaultParameterValues['Out-File:Encoding'] = 'utf8'
 
-$isWin11 = (Get-WmiObject Win32_OperatingSystem).Caption -Match "Windows 11"
-if (!$isWin11) {
-    [console]::beep(500, 300)
-    Write-Output "`a"
-
-    Write-Host "This script requires Windows 11" -ForegroundColor Red
-    exit
-}
-
 $restartNeeded = $false
 
 $oldTitle = $host.ui.RawUI.WindowTitle
