@@ -5,6 +5,9 @@ Write-Output ""
 Write-Output ""
 winget upgrade --silent --accept-package-agreements --all
 
+. $HOME\.config\IntelliJIdea\plugins.ps1
+. $HOME\.config\Install\VsCode\plugins.ps1
+
 Write-Output ""
 Write-Output ""
 Write-Output "Updating installed Ubuntu applications"

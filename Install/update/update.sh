@@ -19,8 +19,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Updating Homebrew"
 brew update --force
-brew upgrade --greedy
+brew upgrade
 brew unlink node@20 && brew link --force node@20
+
+sh $HOME/.config/IntelliJIdea/plugins.ps1
+sh $HOME/.config/Install/VsCode/plugins.ps1
 
 if [ -d ~/.local/update_extra ]; then
     for file in $(find ~/.local/update_extra -name "*.sh" | sort ); 

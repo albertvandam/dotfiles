@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "mdogan/zulu"
+tap "quarkusio/tap"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
@@ -34,6 +35,8 @@ brew "lima"
 brew "lsd"
 # Platform built on V8 to build network applications
 brew "node@20", link: true
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # HTTP/HTTPS proxy for POSIX systems
@@ -56,12 +59,17 @@ brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 # ZSH plugin that reminds you to use existing aliases for commands you just typed
 brew "zsh-you-should-use"
+# CLI for Quarkus
+brew "quarkusio/tap/quarkus"
 # Dark theme for Insomnia
 cask "dracula-insomnia"
 # Web browser
 cask "firefox"
 # Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
+# Desktop client for GitHub repositories
+cask "github"
+
 # Web browser
 cask "google-chrome"
 # HTTP and GraphQL Client
@@ -96,6 +104,8 @@ vscode "EditorConfig.EditorConfig"
 vscode "eriklynd.json-tools"
 vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-close-tag"
+vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"
 vscode "hediet.vscode-drawio"
 vscode "humao.rest-client"
 vscode "ms-azuretools.vscode-docker"

@@ -42,3 +42,4 @@ code --install-extension "yzhang.markdown-all-in-one" --force
 code --install-extension "orta.vscode-jest" --force
 code --install-extension "stylelint.vscode-stylelint" --force
 code --install-extension "vivaxy.vscode-conventional-commits" --force
+code --install-extension "github.copilot" --force

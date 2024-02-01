@@ -6,6 +6,7 @@ echo "Installing Apps"
 brew bundle --file=~/.config/Install/macos/Brewfile --no-lock
 
 sudo chmod go-w "$HOMEBREW_PREFIX/share" 
+sudo chmod go-w "$HOMEBREW_PREFIX/include" 
 sudo chmod -R go-w "$HOMEBREW_PREFIX/share/zsh"
 
 mkdir -p ~/.docker/cli-plugins
