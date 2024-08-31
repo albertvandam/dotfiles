@@ -3,85 +3,93 @@
 
 # This template requires Lima v0.8.0 or later
 images:
-- location: "https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64.img"
-  arch: "x86_64"
-- location: "https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-arm64.img"
-  arch: "aarch64"
+    - location: "https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64.img"
+      arch: "x86_64"
+    - location: "https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-arm64.img"
+      arch: "aarch64"
 
 mounts:
-- location: "~/Projects"
-- location: "/tmp/lima"
-  writable: true
+    - location: "~"
+    - location: "~/Projects"
+    - location: "/tmp/lima"
+      writable: true
 
+# containerd is managed by Docker, not by Lima, so the values are set to false here.
 containerd:
-  system: false
-  user: false
+    system: false
+    user: false
 
 provision:
-- mode: system
-  script: |
-    #!/bin/sh
-    sed -i 's/host.lima.internal.*/host.lima.internal host.docker.internal/' /etc/hosts
+    - mode: system
+      script: |
+          #!/bin/sh
+          sed -i 's/host.lima.internal.*/host.lima.internal host.docker.internal/' /etc/hosts
+    - mode: system
+      script: |
+          #!/bin/bash
+          set -eux -o pipefail
+          export DEBIAN_FRONTEND=noninteractive
 
-- mode: system
-  script: |
-    #!/bin/bash
-    set -eux -o pipefail
+          # Add Docker's official GPG key:
+          sudo apt-get update
+          sudo apt-get install -y ca-certificates curl gnupg
+          sudo install -m 0755 -d /etc/apt/keyrings
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+          sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
-    # Add Docker's official GPG key:
-    sudo apt-get update
-    sudo apt-get install ca-certificates curl gnupg
-    sudo install -m 0755 -d /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    sudo chmod a+r /etc/apt/keyrings/docker.gpg
+          # Add the repository to Apt sources:
+          echo \
+          "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+          $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+          sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+          sudo apt-get update
 
-    # Add the repository to Apt sources:
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
+          # sudo apt-get upgrade -y
 
-    # sudo apt-get upgrade -y
+          sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+          sudo systemctl disable --now docker
 
-    sudo systemctl disable --now docker
+          sudo apt-get install -y uidmap dbus-user-session docker-ce-rootless-extras
+    - mode: user
+      script: |
+          #!/bin/bash
+          set -eux -o pipefail
+          systemctl --user start dbus
+          dockerd-rootless-setuptool.sh install
+          docker context use rootless
 
-    sudo apt-get install -y uidmap dbus-user-session docker-ce-rootless-extras
-
-- mode: user
-  script: |
-    #!/bin/bash
-    set -eux -o pipefail
-    systemctl --user start dbus
-    dockerd-rootless-setuptool.sh install
-
-    docker context use rootless
-
-    docker volume create portainer_data
-    docker run -d -p 8000:8000 -p 9443:9443 --name=portainer --restart=always -v /$XDG_RUNTIME_DIR/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+          docker volume create portainer_data
+          docker run -d -p 8000:8000 -p 9443:9443 --name=portainer --restart=always -v /$XDG_RUNTIME_DIR/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 
 probes:
-  - script: |
-    #!/bin/bash
-    set -eux -o pipefail
-    if ! timeout 30s bash -c "until command -v docker >/dev/null 2>&1; do sleep 3; done"; then
-      echo >&2 "docker is not installed yet"
-      exit 1
-    fi
-    if ! timeout 30s bash -c "until pgrep rootlesskit; do sleep 3; done"; then
-      echo >&2 "rootlesskit (used by rootless docker) is not running"
-      exit 1
-    fi
-  hint: See "/var/log/cloud-init-output.log". in the guest
+    - script: |
+          #!/bin/bash
+          set -eux -o pipefail
+          if ! timeout 30s bash -c "until command -v docker >/dev/null 2>&1; do sleep 3; done"; then
+              echo >&2 "docker is not installed yet"
+              exit 1
+          fi
+          if ! timeout 30s bash -c "until pgrep rootlesskit; do sleep 3; done"; then
+              echo >&2 "rootlesskit (used by rootless docker) is not running"
+              exit 1
+          fi
+      hint: See "/var/log/cloud-init-output.log" in the guest
 
 hostResolver:
-  # hostResolver.hosts requires lima 0.8.3 or later. Names defined here will also
-  # resolve inside containers, and not just inside the VM itself.
-  hosts:
-    host.docker.internal: host.lima.internal
+    # hostResolver.hosts requires lima 0.8.3 or later. Names defined here will also
+    # resolve inside containers, and not just inside the VM itself.
+    hosts:
+        host.docker.internal: host.lima.internal
 
 portForwards:
-- guestSocket: "/run/user/{{.UID}}/docker.sock"
-  hostSocket: "{{.Dir}}/sock/docker.sock"
+    - guestSocket: "/run/user/{{.UID}}/docker.sock"
+      hostSocket: "{{.Dir}}/sock/docker.sock"
+
+message: |
+    To run `docker` on the host (assumes docker-cli is installed), run the following commands:
+    ------
+    docker context create lima-{{.Name}} --docker "host=unix://{{.Dir}}/sock/docker.sock"
+    docker context use lima-{{.Name}}
+    docker run hello-world
+    ------
