@@ -1,93 +1,53 @@
 tap "dracula/install"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
 tap "homebrew/services"
 tap "mdogan/zulu"
 tap "quarkusio/tap"
-# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
-# Load/unload environment variables based on $PWD
 brew "direnv"
-# Bash, Zsh and Fish completion for Docker
 brew "docker-completion"
-# Pack, ship and run any application as a lightweight container
 brew "docker"
-# Docker CLI plugin for extended build capabilities with BuildKit
 brew "docker-buildx"
-# Isolated development environments using Docker
 brew "docker-compose"
-# Platform keystore credential helper for Docker
 brew "docker-credential-helper"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Pager program similar to more
 brew "less"
-# Linux virtual machines
 brew "lima"
-# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
-# Platform built on V8 to build network applications
 brew "node@20", link: true
-# OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
-# Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# HTTP/HTTPS proxy for POSIX systems
 brew "tinyproxy"
-# Extraction utility for .zip compressed archives
 brew "unzip"
-# Internet file retriever
 brew "wget"
-# Shell extension to navigate your filesystem faster
 brew "zoxide"
-# UNIX shell (command interpreter)
 brew "zsh"
-# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# Additional completion definitions for zsh
 brew "zsh-completions"
-# Zsh port of Fish shell's history search
 brew "zsh-history-substring-search"
-# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# ZSH plugin that reminds you to use existing aliases for commands you just typed
 brew "zsh-you-should-use"
-# CLI for Quarkus
 brew "quarkusio/tap/quarkus"
-# Dark theme for Insomnia
+cask "devtoys"
 cask "dracula-insomnia"
-# Web browser
 cask "firefox"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Desktop client for GitHub repositories
 cask "github"
-
-# Web browser
 cask "google-chrome"
-# HTTP and GraphQL Client
+cask "hiddenbar"
 cask "insomnia"
-# Java IDE by JetBrains
 cask "intellij-idea"
-# Password manager app
 cask "keepassxc"
-# GPU-based terminal emulator
 cask "kitty"
-# Clipboard manager
 cask "microsoft-edge"
-# Open-source code editor
 cask "visual-studio-code"
-# Azul Zulu JDK 17
-cask "zulu-jdk17"
-vscode "Angular.ng-template"
-vscode "Arjun.swagger-viewer"
+cask "zulu-jdk21"
+vscode "angular.ng-template"
+vscode "arjun.swagger-viewer"
 vscode "bierner.github-markdown-preview"
 vscode "bierner.markdown-checkbox"
 vscode "bierner.markdown-emoji"
@@ -100,20 +60,20 @@ vscode "ckolkman.vscode-postgres"
 vscode "dbaeumer.vscode-eslint"
 vscode "dracula-theme.theme-dracula"
 vscode "eamodio.gitlens"
-vscode "EditorConfig.EditorConfig"
+vscode "editorconfig.editorconfig"
 vscode "eriklynd.json-tools"
 vscode "esbenp.prettier-vscode"
 vscode "formulahendry.auto-close-tag"
-vscode "GitHub.copilot"
-vscode "GitHub.copilot-chat"
+vscode "github.copilot"
+vscode "github.copilot-chat"
 vscode "hediet.vscode-drawio"
 vscode "humao.rest-client"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-edgedevtools.vscode-edge-devtools"
 vscode "ms-vscode-remote.remote-containers"
 vscode "naumovs.color-highlight"
-vscode "Orta.vscode-jest"
-vscode "PKief.material-icon-theme"
+vscode "orta.vscode-jest"
+vscode "pkief.material-icon-theme"
 vscode "redhat.java"
 vscode "redhat.vscode-microprofile"
 vscode "redhat.vscode-quarkus"
@@ -124,9 +84,10 @@ vscode "secanis.jenkinsfile-support"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "stylelint.vscode-stylelint"
 vscode "ue.alphabetical-sorter"
-vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
-vscode "VisualStudioExptTeam.vscodeintellicode"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vivaxy.vscode-conventional-commits"
+vscode "vscjava.vscode-gradle"
 vscode "vscjava.vscode-java-debug"
 vscode "vscjava.vscode-java-dependency"
 vscode "vscjava.vscode-java-pack"

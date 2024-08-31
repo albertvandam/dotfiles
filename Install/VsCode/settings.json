@@ -61,7 +61,12 @@
     "files.eol": "\n",
     "git.autofetch": true,
     "java.autobuild.enabled": false,
-    "java.cleanup.actionsOnSave": ["qualifyStaticMembers", "addOverride", "addDeprecated", "addFinalModifier"],
+    "java.cleanup.actionsOnSave": [
+        "qualifyStaticMembers",
+        "addOverride",
+        "addDeprecated",
+        "addFinalModifier"
+    ],
     "powershell.powerShellAdditionalExePaths": {
         "PowerShell": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
     },
@@ -89,7 +94,6 @@
     "security.allowedUNCHosts": ["wsl.localhost"],
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.enableBell": true,
     "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
@@ -103,5 +107,9 @@
     "workbench.startupEditor": "none",
     "zenMode.centerLayout": false,
     "quarkus.tools.alwaysShowWelcomePage": false,
-    "cSpell.userWords": ["DVSS", "WEBCOM"]
+    "cSpell.userWords": ["DVSS", "WEBCOM"],
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "terminal.integrated.enableVisualBell": true
 }
