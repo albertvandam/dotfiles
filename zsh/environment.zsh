@@ -12,10 +12,10 @@ case $CURRENT_OS in
         ;;
 
     "MACOS")
-        export PATH="$HOME/.local/maven/apache-maven-3.9.5/bin:$PATH"
+        export PATH="$HOME/.local/maven/apache-maven-3.9.9/bin:$PATH"
         export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
         export PATH="$HOME/.rd/bin:$PATH"
-        export MAVEN_HOME="$HOME/.local/maven/apache-maven-3.9.5"
+        export MAVEN_HOME="$HOME/.local/maven/apache-maven-3.9.9"
         export PROJECTS="$HOME/Projects"
         ;;
 esac

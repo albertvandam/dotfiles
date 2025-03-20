@@ -7,7 +7,7 @@ case $CURRENT_OS in
 
     "MACOS")
       source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-      FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+      FPATH=$(brew --prefix)/share/zsh-completions:/Users/albert/.docker/completions:$FPATH
       ;;
 esac
 

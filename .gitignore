@@ -9,3 +9,5 @@ Brewfile.lock.json
 *.log
 *.crt
 *.key
+github-copilot/
+jgit/

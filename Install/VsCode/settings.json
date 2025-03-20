@@ -61,12 +61,7 @@
     "files.eol": "\n",
     "git.autofetch": true,
     "java.autobuild.enabled": false,
-    "java.cleanup.actionsOnSave": [
-        "qualifyStaticMembers",
-        "addOverride",
-        "addDeprecated",
-        "addFinalModifier"
-    ],
+    "java.cleanup.actionsOnSave": ["qualifyStaticMembers", "addOverride", "addDeprecated", "addFinalModifier"],
     "powershell.powerShellAdditionalExePaths": {
         "PowerShell": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
     },
@@ -111,5 +106,6 @@
     "accessibility.signals.terminalBell": {
         "sound": "on"
     },
-    "terminal.integrated.enableVisualBell": true
+    "terminal.integrated.enableVisualBell": true,
+    "update.showReleaseNotes": false
 }

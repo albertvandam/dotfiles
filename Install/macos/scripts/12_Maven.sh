@@ -2,7 +2,7 @@
 
 echo "Installing Maven"
 
-curl https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip --output /tmp/maven.zip
+curl https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip --output /tmp/maven.zip
 
 if [ ! -d $HOME/.local ]; then
     mkdir -p $HOME/.local

@@ -378,4 +378,5 @@ if [[ "$MAC_PREF" -eq 1 ]]; then
     defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
     defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 
+    echo "Done Configuring MacOS preferences"
 fi
